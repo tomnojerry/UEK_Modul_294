@@ -95,4 +95,6 @@ Media kommt zu letzt
 # JAvascript
 
 `alert('yor massege');` Gibt eine Warnausgabe aus
-console.log('') : Speicher die Logs in einer Datei
+`console.log('Hello wordl');` : Speicher die Logs in einer Datei
+# Varinbeln und 
+Variablen mit Var undlett
