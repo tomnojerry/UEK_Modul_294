@@ -21,9 +21,15 @@ div p:nth-child(2) {
     color: navy;
 }
 
+
+/* Hier werden alle Div angesproche*/
+
 div {
     background-color: aquamarine;
 }
+
+
+/* hier werden alle DIV*/
 
 body>div {
     background-color: yellow;

@@ -97,4 +97,5 @@ Media kommt zu letzt
 `alert('yor massege');` Gibt eine Warnausgabe aus
 `console.log('Hello wordl');` : Speicher die Logs in einer Datei
 # Varinbeln und 
-Variablen mit Var undlett
+Variablen mit Var und let
+

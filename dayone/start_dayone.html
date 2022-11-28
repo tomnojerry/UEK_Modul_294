@@ -33,11 +33,33 @@
             lol
         </div>
 
-        <h2> TEst</h2>
+        <h2> Test</h2>
     </div>
 
     <script>
-        alert('Hello World');
+        function myDisplayer(some) {
+            console.log(some);
+            return some;
+
+        }
+
+        function myCalculator(num1, num2, myCallback) {
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+
+        let x = myCalculator(5, 5, myDisplayer);
+        console.log(x);
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- 
+
+    alert('Hello World');
 
         document.getElementById.("one").innerHTML = ("hello Ai");
 
@@ -67,8 +89,20 @@
 
         // subst(strat, lenght)
         console.log(text.substring(2, 5));
-    </script>
 
-</body>
+        let tags = ["HTML", "Css", "JS"];
+        console.log(tags);
+        for (let i = 0; i < tags.lenght; i++) {
+            console.log(tags[1]);
+        }
 
-</html>
+        tags.forEach(item => {
+            console.log.(item);
+        });
+
+        let cars = {
+            car: "Honda",
+            model: "civic",
+            year: 1998
+        };
+-->
