@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Rubik Microbe';
+    src: url('./fonts/rubikmicrobe.ttf');
+}
+
+body {
+    font-family: 'Rubik Microbe', ;
+}

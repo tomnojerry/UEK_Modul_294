@@ -69,3 +69,16 @@ icons vo google hinzufühgne
 poor commits so far
 
 Lamoo
+
+# Repetioin HTML & CSS
+
+## HTMl
+Grundstruktur mit !
+
+## CSS
+
+Css kann auf 3 verschieden Aeten eingebundenw werden
+1. Inline 
+2. Intern
+3. Extern datei (<link rel="stylesheet" href="./css/style.css">)
+import immmer zu oberst
