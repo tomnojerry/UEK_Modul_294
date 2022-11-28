@@ -81,4 +81,18 @@ Css kann auf 3 verschieden Aeten eingebundenw werden
 1. Inline 
 2. Intern
 3. Extern datei (<link rel="stylesheet" href="./css/style.css">)
-import immmer zu oberst
+
+import immmer zu oberst 
+
+Dnach folgen die stale css
+
+
+mit `@import`
+
+Media kommt zu letzt
+
+
+# JAvascript
+
+`alert('yor massege');` Gibt eine Warnausgabe aus
+console.log('') : Speicher die Logs in einer Datei
