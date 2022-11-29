@@ -92,10 +92,44 @@ mit `@import`
 Media kommt zu letzt
 
 
-# JAvascript
+# Javascript
 
 `alert('yor massege');` Gibt eine Warnausgabe aus
 `console.log('Hello wordl');` : Speicher die Logs in einer Datei
 # Varinbeln und 
 Variablen mit Var und let
+
+# Javascript Libraryy
+
+https://bit.ly/3xi6dOP
+
+
+## CSS-Framework
+Sammlung von Gestaltungselement un dJavascript functionen
+
+Vroteile: 
+Alle Framework sind Mobile Freundliche
+
+NAchteile von Framewokr: 
+Vordefinierte Styles zu finde ist schweirig
+
+1. Bootstrap
+sehr einfaach und in SASS 
+
+2. semanti ui
+
+# Einbinde Stukrtukr Jquery - Frameworks - Css
+
+1. Jquery 
+2. Framework - Materilaize
+3. Stylesheet
+
+Fonts könne überall eingebunde werden
+
+
+### Materialize
+
+cooldown
+
+
 
