@@ -1,3 +1,9 @@
 th {
     border-radius: 0px !important;
 }
+
+.rsymbol {
+    border-radius: 50%;
+    font-size: 30px;
+    margin: 10px;
+}

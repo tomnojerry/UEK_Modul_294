@@ -2,15 +2,22 @@
 <html lang="de">
 
 <head>
+    <meta name="author" content="Nahum">
+    <meta name="title" content="UEK: Modul 294 - Frontend entwicklung">
+    <meta name="description" content="Frontend Entwicklung">
+    <meta name="keywords" content="Frontend Entwicklung frontend development">
+    <meta name="robots" content="index, follow">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tables</title>
 
+    <!-- Fonts Einbinden-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <!-- JQUERY Library Einbinden-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <!-- Compiled and minified CSS -->
@@ -18,10 +25,27 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <!-- Seperates CSS und Javascript Einbinden-->
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./script/index.js"></script>
 </head>
 
 <body>
+
+    <a href="#modal" id="addcar" class="modal-trigger red rsymbol material-symbols-outlined right">add</a>
+    <div style="clear:both"></div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h4 id="Modaltitle"></h4>
+            <p>Darstellung Autos</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" idclass="modal-close waves-effect waves-green btn-flat">Hinzufügen</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Abbrechen</a>
+        </div>
+    </div>
 
     <table class="striped highlight responsive-table">
         <thead class="teal darken-3 orange-text text-lighten-3">
@@ -44,7 +68,37 @@
                 <td>Honda Civic</td>
                 <td>Benzin</td>
                 <td>
-                    <div class="color-column blue darken-3 col s1"></div>
+                    <div class="color-column blue darken-3"></div>
+                    <p class="carcol">Blau</p>
+                </td>
+                <td>Bus</td>
+                <td>50%</td>
+                <td>29.11.2022</td>
+                <td>
+                    <p>
+                        <label>
+                          <input type="checkbox" />
+                          <span></span>
+                        </label>
+                    </p>
+                </td>
+
+                <td>
+                    <a class="material-symbols-rounded blue-text">directions_car</a>
+                    <a href="#modal" id="editcar" class="modal-trigger material-symbols-rounded green-text">edit</a>
+                    <button id="deletecar" class="material-symbols-rounded red-text">delete</button>
+
+
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Honda Civic</td>
+                <td>Benzin</td>
+                <td>
+                    <div class="color-column blue darken-3"></div>
                     <p class="carcol">Blau</p>
                 </td>
                 <td>Bus</td>
@@ -59,21 +113,14 @@
                     </p>
                 </td>
                 <td>
-                    <button>
-                        <span class="material-symbols-rounded blue-text">directions_car</span>
-                    </button>
-                    <button>
-                        <span class="material-symbols-rounded green-text">edit</span>
-                    </button>
-                    <button>
-                        <span class="material-symbols-rounded red-text">delete</span>
-                    </button>
+                    <a class="material-symbols-rounded blue-text">directions_car</a>
+                    <a href="#modal" id="editcar" class=" modal-trigger material-symbols-rounded green-text">edit</a>
+                    <a href="" id="deletecar" class="modal-trigger material-symbols-rounded red-text">delete</a>
                 </td>
             </tr>
 
-
             <tr>
-                <td>1</td>
+                <td>3</td>
                 <td>Honda Civic</td>
                 <td>Benzin</td>
                 <td>
@@ -92,54 +139,16 @@
                     </p>
                 </td>
                 <td>
-                    <button>
-                        <span class="material-symbols-rounded blue-text">directions_car</span>
-                    </button>
-                    <button>
-                        <span class="material-symbols-rounded green-text">edit</span>
-                    </button>
-                    <button>
-                        <span class="material-symbols-rounded red-text">delete</span>
-                    </button>
+                    <a class="material-symbols-rounded blue-text">directions_car</a>
+                    <a href="#modal" id="editcar" class=" modal-trigger material-symbols-rounded green-text">edit</a>
+                    <a href="" id="deletecar" class="modal-trigger material-symbols-rounded red-text">delete</a>
                 </td>
             </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Honda Civic</td>
-                <td>Benzin</td>
-                <td>
-                    <div class="color-column blue darken-3 col s1"></div>
-                    <p class="carcol">Blau</p>
-                </td>
-                <td>Bus</td>
-                <td>50%</td>
-                <td>29.11.2022</td>
-                <td>
-                    <p>
-                        <label>
-                          <input type="checkbox" />
-                          <span></span>
-                        </label>
-                    </p>
-                </td>
-                <td>
-                    <button>
-                        <span class="material-symbols-rounded blue-text">directions_car</span>
-                    </button>
-                    <button>
-                        <span class="material-symbols-rounded green-text">edit</span>
-                    </button>
-                    <button>
-                        <span class="material-symbols-rounded red-text">delete</span>
-                    </button>
-                </td>
-            </tr>
-
-
         </tbody>
-
     </table>
+
+    <script src="./script/index.js"></script>
+
 </body>
 
 </html>
