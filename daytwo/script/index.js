@@ -8,6 +8,7 @@ $(document).ready(function(){
 $('#addcar').click(function (e) {
   e.preventDefault();
   $('#Modaltitle').html('Neues Auto Erfassen');
+  
 });
 
 $('#editcar').click(function (e) {
