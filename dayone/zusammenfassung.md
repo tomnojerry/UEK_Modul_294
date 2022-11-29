@@ -131,5 +131,15 @@ Fonts könne überall eingebunde werden
 
 cooldown
 
+# Notizen
+
+a Anchor Tag mit # gartem HAd
+
+
+# Grid in CSs
+
+parent div = row
+child div = col
+
 
 
