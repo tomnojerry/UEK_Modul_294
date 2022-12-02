@@ -1,24 +1,25 @@
 /* Modal Generienern*/ 
-
 $(document).ready(function(){
     $('.modal').modal();
   });
 
-// Modal anpassen
+//Modal anpassen
 $('#addcar').click(function (e) {
   e.preventDefault();
   $('#Modaltitle').html('Neues Auto Erfassen');
-  $('#mfsubmit').html('Hinzufügen');
-  $('#Modalcontent').load("/daytwo/forms/form.html");
+  $('#Modalcontent').load("/daytwo/forms/form.html", function() {
+  $.getScript("/daytwo/forms/form.js")});
+  $('#msubmit').html('Hinzufügen');
 });
 
 $('.editcar').click(function (e) {
   e.preventDefault();
   $('#Modaltitle').html('Auto Editieren');
-  $('#mfsubmit').html('Speichern');
   $('#Modalcontent').load("/daytwo/forms/form.html", function() {
   $.getScript("/daytwo/forms/form.js")});
+  $('#msubmit').html('Speichern');
 });
+
 
 $('.deletecar').click(function (e) {
   e.preventDefault();
@@ -30,3 +31,4 @@ $('.deletecar').click(function (e) {
     console.log('Nein')
   }
 });
+

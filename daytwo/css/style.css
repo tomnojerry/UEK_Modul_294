@@ -11,3 +11,17 @@ th {
 h4{
     color: orange;
 }
+
+/* color of datepicker */
+.datepicker-date-display {
+    color: grey !important;
+    background-color: orange !important;
+}
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+    color: orange !important;
+}
+.datepicker-table td.is-selected {
+    background-color: orange !important;
+}
+.datepicker-table td.is-today {
+    color: orange !important;

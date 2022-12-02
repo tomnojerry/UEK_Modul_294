@@ -1,31 +1,76 @@
 <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix orange-text">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate orange-text">
-          <label for="icon_prefix">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix orange-text">phone</i>
-          <input id="icon_telephone" type="tel" class="validate orange-text">
-          <label for="icon_telephone">Telephone</label>
-        </div>
-      </div>
-    </form>
 
-
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix orange-text">account_circle</i>
+                <input id="FeldName" type="text" class="validate orange-text">
+                <label for="FeldName">First Name</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix orange-text">phone</i>
+                <input id="FeldName" type="text" class="validate orange-text">
+                <label for="FeldName">Telephone</label>
+            </div>
+</div>
 
 <div class="row">
-    <div class="col s6">
-        <div id="save" class="btn green darken-2 left">Speichern</div>
+    <div class="col s12 m4">
+        <label>
+            <input name="Tank" type="radio" class="Tank" id="Diesel" value="Diesel" checked />
+            <span>Diesel</span>
+        </label>
     </div>
-    
-    <div class="col s6">
-        <div id="close" class="btn red darken-2 right">Abbrechen</div>
+    <div class="col s12 m4">
+        <label>
+            <input name="Tank" type="radio" class="Tank" id="Benzin" value="Benzin"/>
+            <span>Benzin</span>
+        </label>
+    </div>
+    <div class="col s12 m4">
+        <label>
+            <input name="Tank" type="radio" class="Tank" id="Hybrid" value="Hybrid"/>
+            <span>Hybrid</span>
+        </label>
     </div>
 </div>
 
+<div class="row">
+
+
+    <div class="col s12 m3 input-field">
+        <input id="Tanken" type="number" min="0" step="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+        <label for="Tanken">Tanken</label>
+    </div>
+
+    <div class="col s12 m4 input-field">
+        <input type="text" class="datepicker" id="datepicker">
+        <label for="datepicker">Date</label>
+    </div> 
+
+
+    <div class="input-field col s12 m5">
+        <select>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">PKW</option>
+            <option value="2">LKW</option>
+            <option value="3">SUV</option>
+            <option value="3">BUS</option>
+        </select>
+        <label>Materialize Select</label>
+    </div>
+
+</div>
+
+<!-- CODE above works -->
+
+
+<div class="row">
+    <div class="col s12 m6 l3 left">
+        <a href="#!" id="msubmit" class="light-green modal-close waves-effect waves-green btn-flat">Speichern</a>
+    </div>
+    <div class="col s12 m6 l3 right">
+        <a href="./" id="mcancel" class="red modal-close waves-effect waves-red btn-flat">Abbrechen</a>
+    </div>
+</div>
 
 
 <style>
@@ -53,6 +98,5 @@
        
 </style>
 
-
-<script src="form.js"></script>
+<script src="./form.js"></script>
 

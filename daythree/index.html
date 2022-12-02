@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASON Handelbars</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+<body>
+    <main id="DataHolder">
+
+    </main>
+
+    <script id="template" type="text/x-handlebars-template">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{name}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table> 
+    </script>
+
+    <script>
+        var template = $("#template").html();
+        //console.log(template);
+        /* Handbars compilieren*/
+        var templatescript = Handlebars.compile(template);
+        $.ajax({
+            type: "get",
+            url: "api.php",
+            // falls die Jason datei mitgegebn werden sol: data: "data",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                // handl Bars 
+                var html = templatescript(response);
+                // HTML ins main einfügen
+                $('main').html(html);
+
+                // ACTION für DEETe und EDIT Button Kommen hier hin erst nach deem Die Daten geladen sind
+
+                
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -22,6 +22,8 @@
 
     <!-- JQUERY Library Einbinden-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- JSON HandleBars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 
     <!-- Materialize Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -34,136 +36,106 @@
 </head>
 
 <body>
-
     <!-- ADD Button TOP-right corner -->
     <a href="#modal" id="addcar" class="modal-trigger red rsymbol material-symbols-outlined right">add</a>
     <div style="clear:both"></div>
 
     <!-- Modal Structure -->
-    <div id="modal" class="modal black">
+    <div id="modal" class="modal">
         <div class="modal-content">
             <h4 id="Modaltitle"></h4>
             <p id="Modalcontent">Darstellung Autos</p>
         </div>
-    <!-- speichern und Abbrechen Button Modal -->
-        <!-- 
+
+        <!-- // - speichern und Abbrechen Button Modal
             <div class="modal-footer black">
             <a href="#!" id="mfsubmit" class="light-green modal-close waves-effect waves-green btn-flat"></a>
             <a href="./" id="mfcancel" class="red modal-close waves-effect waves-red btn-flat">Abbrechen</a>
         </div>
         -->
     </div>
-         
+
+    <main>
+
+    </main>
+
+    <script id="template" type="text/x-handlebars-template">
+        <table class="striped highlight responsive-table">
+            <thead class="teal darken-3 orange-text text-lighten-3">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Kraftstoff</th>
+                    <th>Farbe</th>
+                    <th>Bauart</th>
+                    <th>Tank</th>
+                    <th>Date</th>
+                    <th>Bemerkung</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
     
-    <table class="striped highlight responsive-table">
-        <thead class="teal darken-3 orange-text text-lighten-3">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Kraftstoff</th>
-                <th>Farbe</th>
-                <th>Bauart</th>
-                <th>Tank</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
+            <tbody class="grey">
+                {{#each data}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{name}}</td>
+                    <td>{{kraftstoff}}</td>
+                    <td>{{farbe}}</td>
+                    <td>{{bauart}}</td>
+                    <td>{{tanken}}</td>
+                    <td>{{date}}</td>
+                    <td>{{bemerkung}}</td>
+                    <td>
+                        <p>
+                            <label>
+                            <input type="checkbox" />
+                            <span></span>
+                            </label>
+                        </p>
+                    </td>
 
-        <tbody class="green">
-            <tr>
-                <td>1</td>
-                <td>Honda Civic</td>
-                <td>Benzin</td>
-                <td>
-                    <!-- Check for ERROR -->
-                    <div class="color-column blue darken-3"></div>
-                    <p class="carcol">Blau</p>
-                </td>
-                <td>Bus</td>
-                <td>50%</td>
-                <td>29.11.2022</td>
-                <td>
-                    <p>
-                        <label>
-                          <input type="checkbox" />
-                          <span></span>
-                        </label>
-                    </p>
-                </td>
-                <td>
-                    <a href="#" class="addfuel material-symbols-rounded blue-text">directions_car</a>
-                    <a href="#modal" id="editcar" class="editcar modal-trigger material-symbols-rounded green-text">edit</a>
-                    <a href="#" class="deletecar material-symbols-rounded red-text">delete</a>
-                </td>
-            </tr>
+                    <td>
+                        <a href="#" class="addfuel material-symbols-rounded blue-text">directions_car</a>
+                        <a href="#modal" class="editcar modal-trigger material-symbols-rounded green-text">edit</a>
+                        <a href="#" class="deletecar material-symbols-rounded red-text">delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+    
+    <script>
+            var template = $("#template").html();
+            //console.log(template);
+            /* Handbars compilieren*/
+            var templatescript = Handlebars.compile(template);
+            $.ajax({
+                type: "get",
+                url: "../daythree/api.php",
+                // falls die Jason datei mitgegebn werden sol: data: "data",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    // handl Bars 
+                    var html = templatescript(response);
+                    // HTML ins main einfügen
+                    $('main').html(html);
 
-            <tr>
-                <td>2</td>
-                <td>Honda Civic</td>
-                <td>Benzin</td>
-                <td>
-                    <!-- Check for ERROR -->
-                    <div class="color-column blue darken-3"></div>
-                    <p class="carcol">Blau</p>
-                </td>
-                <td>Bus</td>
-                <td>50%</td>
-                <td>29.11.2022</td>
-                <td>
-                    <p>
-                        <label>
-                          <input type="checkbox" />
-                          <span></span>
-                        </label>
-                    </p>
-                </td>
-                <td>
-                    <a href="#" class="addfuel material-symbols-rounded blue-text">directions_car</a>
-                    <a href="#modal" id="editcar" class="editcar modal-trigger material-symbols-rounded green-text">edit</a>
-                    <a href="#" class="deletecar material-symbols-rounded red-text">delete</a>
-                </td>
-            </tr>
+                    // ACTION für DEETe und EDIT Button Kommen hier hin erst nach deem Die Daten geladen sind
 
-            <tr>
-                <td>3</td>
-                <td>Honda Civic</td>
-                <td>Benzin</td>
-                <td>
-                    <!-- Check for ERROR -->
-                    <div class="color-column blue darken-3"></div>
-                    <p class="carcol">Blau</p>
-                </td>
-                <td>Bus</td>
-                <td>50%</td>
-                <td>29.11.2022</td>
-                <td>
-                    <p>
-                        <label>
-                          <input type="checkbox" />
-                          <span></span>
-                        </label>
-                    </p>
-                </td>
-                <td>
-                    <a href="#" class="addfuel material-symbols-rounded blue-text">directions_car</a>
-                    <a href="#modal" id="editcar" class="editcar modal-trigger material-symbols-rounded green-text">edit</a>
-                    <a href="#" class="deletecar material-symbols-rounded red-text">delete</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <div class="row">
-        <div class="col green s12 m6 l4 xl3">1. GridChild </div>
-        <div class="col red s12 m6 l4 xl3">2. GridChild </div>
-        <div class="col blue s12 m6 l4 xl3">3. GridChild </div>
-        <div class="col yellow s12 m6 l4 xl3">4. GridChild </div>
-    </div>
-
-
-
+                    $('.editcar').click(function (e) {
+                        e.preventDefault();
+                        $('#Modaltitle').html('Auto Editieren');
+                        $('#Modalcontent').load("/daytwo/forms/form.html", function() {
+                        $.getScript("/daytwo/forms/form.js")});
+                        $('#msubmit').html('Speichern');
+                    });
+                }
+            });
+    </script>
 
     <script src="./script/index.js"></script>
 
